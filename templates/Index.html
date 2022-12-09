@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>{{ title }}</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+  <style>
+      .navbar-light .navbar-nav .nav-link {
+        color: rgba(0,0,0,.55);
+        font-size: 18px;
+        color: white;
+      }
+
+      .container-fluid {
+            background-color: blue;
+      }
+  </style>
+</head>
+
+<body>
+    <div class="m-4">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand">
+                    <img src="data:image/png;base64,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" height="50" width="100" alt="CoolBrand">
+                </a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="/" class="nav-item nav-link">Pie Chart</a>
+                        <a href="/volume" class="nav-item nav-link">Bar Chart</a>
+                        <a href="/price" class="nav-item nav-link">Line Chart</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <h1 style="text-align: center">{{ title }}</h1>
+
+    <canvas id="pieChart" width="900" height="300"></canvas>
+    <script>
+        new Chart(document.getElementById("pieChart"), {
+            type: 'pie',
+            data: {
+              labels: {{ labels | safe }},
+              datasets: [{
+                label: "",
+                backgroundColor: [
+                    "#3e95cd", "#8e5ea2", "#3cba9f","#e8c3b9","#c45850", "#808000", "#800080", "#C71585", "#A0522D", "#BC8F8F", "#008B8B"],
+                data: {{ values }}
+              }]
+            },
+            options: {
+              title: {
+                display: true,
+                    text: 'Top 10 highest traded crypto symbols'
+              }
+            }
+        });
+    </script>
+</body>
+</html>
